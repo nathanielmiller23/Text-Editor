@@ -3,6 +3,7 @@
 
 import tkinter as tk
 from tkinter import filedialog
+from tkinter.constants import END
 
 
 class Menubar:
@@ -45,13 +46,21 @@ class MillyText:
         self.menubar = Menubar(self)
 
     def set_window_title(self, name=None):
-        pass
+        if name:
+            self.master.title(name + " - MillyText")
+        else:
+            self.master.title("Untitled - MillyText")
 
     def new_file(self):
-        pass
+        self.textarea.delete(1.0, tk.END)
+        self.filename = None
+        self.set_window_title()
+
 
     def open_file(self):
-        self.filename = filedialog.askopenfilename(defaultextension="txt", filetypes=[("All Files", "*.*"), 
+        self.filename = filedialog.askopenfilename(
+        defaultextension="txt", filetypes=[
+        ("All Files", "*.*"), 
         ("Text Files", "*.txt"), 
         ("Python Scripts", "*.py"), 
         ("Java Files", "*.java"),
@@ -65,16 +74,43 @@ class MillyText:
             self.textarea.delete(1.0, tk.END)
             with open(self.filename, "r") as f:
                 self.textarea.insert(1.0, f.read())
+            self.set_window_title(self.filename)
 
     def save(self):
-        pass
+        if self.filename:
+            try:
+                textarea_content = self.textarea.get(1.0, tk.END)
+                with open(self.filename, "w") as f:
+                    f.write(textarea_content)
+            except Exception as e:
+                print(e)
+        else:
+            self.save_as()
 
     def save_as(self):
-        pass
+        try:
+            new_file = filedialog.asksaveasfilename(
+            initialfile="Untitled.txt",
+            defaultextension="txt", filetypes=[
+                ("All Files", "*.*"), 
+                ("Text Files", "*.txt"), 
+                ("Python Scripts", "*.py"), 
+                ("Java Files", "*.java"),
+                ("Markdown Documents", "*.md"), 
+                ("JavaScript Files", "*.js"), 
+                ("HTML Documents", "*.html"),
+                ("CSS Documents", "*.css")])
+            textarea_content = self.textarea.get(1.0, tk.END)
+            with open(new_file, "w") as f:
+                f.write(textarea_content)
+            self.filename = new_file
+            self.set_window_title(self.filename)
+        except Exception as e:
+            print(e)
 
 
 
 if __name__ == "__main__":
-    master = tk.Tk()
-    pt = MillyText(master)
-    master.mainloop()
+            master = tk.Tk()
+            pt = MillyText(master)
+            master.mainloop()
