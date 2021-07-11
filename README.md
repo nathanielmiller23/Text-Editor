@@ -1,6 +1,6 @@
 # MillyText lightweight Python text editor
 
-![MillyText Logo](https://imgur.com/a/zuGrIxF)
+![MillyText Logo](https://media.giphy.com/media/wazZhTxLPYbzjjrqZE/giphy.gif)
 
 
 ### Completed this project because of my interest in both developer tools and GUI applications
