@@ -4,7 +4,7 @@
 import tkinter as tk
 
 class PyText:
-    def _init_(self, master):
+    def __init__(self, master):
         master.title("Untitled - PyText")
         master.geometry("1200x700")
 
