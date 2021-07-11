@@ -8,6 +8,12 @@ class PyText:
         master.title("Untitled - PyText")
         master.geometry("1200x700")
 
+        self.textarea = tk.Text(master)
+        self.scroll = tk.Scrollbar(master, command=self.textarea.yview)
+        self.textarea.configure(yscrollcommand=self.scroll.set)
+        self.textarea.pack(side=tk.LEFT)
+        self.scroll.pack(side=tk.RIGHT)
+
 
 
 if __name__ == "__main__":
