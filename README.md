@@ -20,3 +20,4 @@ TO DO:
 Resources being used:
 - [Create your Own IDE || Build a Python Compiler || Best IDE for Python || Python Project](https://www.youtube.com/watch?v=f1u3me4GYmw)
 - [Brewing Your Very Own IDE: A How-To Guide](https://www.youtube.com/watch?v=Bd5iPZ409HU)
+- [How To Use Images as Backgrounds in Tkinter?](https://www.geeksforgeeks.org/how-to-use-images-as-backgrounds-in-tkinter/)
