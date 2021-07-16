@@ -15,3 +15,8 @@ TO DO:
 - Update interface to make it more attractive
 - Add more menu functionality (terminal and messaging functions)
 - Implement heavy customization
+
+
+Resources being used:
+- [Create your Own IDE || Build a Python Compiler || Best IDE for Python || Python Project](https://www.youtube.com/watch?v=f1u3me4GYmw)
+- [Brewing Your Very Own IDE: A How-To Guide](https://www.youtube.com/watch?v=Bd5iPZ409HU)
